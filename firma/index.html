@@ -8,6 +8,9 @@
     <script src="https://kit.fontawesome.com/ee1a221062.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Company Web</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Rock+Salt&display=swap');
+    </style>
 </head>
 <body id="home">
     <!-- navbar -->|
@@ -124,7 +127,7 @@
         </div>
         <!-- #map -->
          <div id="map" class="contact-map"></div>
-         <gmp-map center="58.349451,26.714695" zoom="16" map-id="DEMO_MAP_ID" style="height: 550px;"></gmp-map>
+         <!-- <gmp-map center="58.349451,26.714695" zoom="16" map-id="DEMO_MAP_ID" style="height: 550px;"></gmp-map>
     </section>
 
     <!-- #footer -->
@@ -133,9 +136,41 @@
 
     </footer>
     <!-- map script -->
-     <script async
+     <!--<script async
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3g0av57RiCSax8EioWGA8Uc9ZT4A0OHg&libraries=maps,marker&v=beta"
      defer>
+</script>-->
+<script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: "AIzaSyC3g0av57RiCSax8EioWGA8Uc9ZT4A0OHg",
+      v: "weekly",
+    });
+</script>
+<script>
+        
+    let map;
+
+    async function initMap() {
+    
+    const position = { lat: 58.349451, lng: 26.714695 };
+    
+    const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+    map = new Map(document.getElementById("map"), {
+        zoom: 16,
+        center: position,
+        mapId: "DEMO_MAP_ID",
+    });
+
+    const marker = new AdvancedMarkerElement({
+        map: map,
+        position: position,
+        title: "Tartu",
+    });
+    }
+
+    initMap();
 </script>
 </body>
 </html>

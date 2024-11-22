@@ -204,14 +204,18 @@ a {
 
  /* contact */
 
- #contact {
+#contact {
     display: flex;
- }
+    width: 100%;
+    height: 50vh; /* Ensures the section takes up full viewport height */
+    box-sizing: border-box;
+}
 
- #contact .contact-form,
- #contact .contact-map {
-    flex: auto;
- }
+#contact .contact-form,
+#contact .contact-map {
+    flex: 1 1 50%; /* 50% width for both form and map */
+    box-sizing: border-box;
+}
  
  #contact .contact-form .form-group {
     margin: 0.75rem;
@@ -233,4 +237,14 @@ a {
     outline: none;
     border: #333 solid 1px;
  }
+#contact .contact-map {
+    position: relative;
+    background: #e0e0e0; /* Light gray as a placeholder for testing */
+}
+#map {
+    width: 100%;
+    height: 100%; /* Ensures the map fills its container */
+}
 
+
+    
